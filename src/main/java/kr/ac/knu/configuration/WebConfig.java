@@ -30,7 +30,7 @@ import java.util.List;
  * Created by rokim on 2017. 5. 27..
  */
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc
 @Slf4j
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Autowired private UserOperator userOperator;
