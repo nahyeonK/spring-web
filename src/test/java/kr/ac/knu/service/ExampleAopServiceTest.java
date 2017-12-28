@@ -24,7 +24,7 @@ public class ExampleAopServiceTest {
 
     @Before
     public void setUp() {
-        userRepository.deleteAll();
+//        userRepository.deleteAll();
 
         KnuUser knuUser = new KnuUser();
         knuUser.setUserId("rokim");
@@ -46,12 +46,16 @@ public class ExampleAopServiceTest {
         KnuUser robin = userRepository.findByUserId("rokim");
         KnuUser ian = userRepository.findByUserId("iye");
 
-        exampleAopService.dealUserPoint(robin, ian, 500);
+        try {
+            exampleAopService.dealUserPoint(robin, ian, 500);
+        } catch (Exception e) {
+            ;;
+        }
 
         KnuUser afterRobin = userRepository.findByUserId("rokim");
         KnuUser afterIan = userRepository.findByUserId("iye");
 
-        System.out.println(afterRobin);
-        System.out.println(afterIan);
+        System.out.println(afterRobin.getPoint());
+        System.out.println(afterIan.getPoint());
     }
 }

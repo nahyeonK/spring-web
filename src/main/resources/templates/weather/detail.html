@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li th:text="${weather.temperature}">기온 : 몇도</li>
+        <li th:text="${weather.explain}">오늘은 매우 추울 예정입니다.</li>
+    </ul>
+</body>
+</html>
